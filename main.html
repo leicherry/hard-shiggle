@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapping Service</title>
+  <style>
+    /* Full-screen map */
+    #map {
+      height: 100%;
+      width: 100%;
+    }
+    /* Make the body and html take full height of the screen */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- The map container -->
+  <div id="map"></div>
+
+  <script>
+    function initMap() {
+      // Set the center of the map
+      const center = { lat: -34.397, lng: 150.644 };
+
+      // Create a new map centered on the above location
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 8,
+        center: center,
+      });
+
+      // Create a marker at the center
+      const marker = new google.maps.Marker({
+        position: center,
+        map: map,
+        title: "Your Location",
+      });
+    }
+  </script>
+
+  <!-- Load Google Maps JavaScript API with your API key -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDS4FLI2gFcIw2HxSkXY_MjTSJhaAv_WZw&callback=initMap"
+    async
+    defer
+  ></script>
+
+</body>
+</html>
